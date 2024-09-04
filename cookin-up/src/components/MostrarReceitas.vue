@@ -19,10 +19,6 @@ export default {
     const receitas = await obterReceitas();
 
     this.receitasEncontradas = receitas.filter((receita) => {
-      // Lógica que verifica se posso fazer receita:
-      // Todos os ingredientes de uma receita devem estar inclusos na minha lista de ingredientes
-      // Se sim, devemos retornar `true`
-
       const possoFazerReceita = itensDeLista1EstaoEmLista2(receita.ingredientes, this.ingredientes);
 
       return possoFazerReceita;
